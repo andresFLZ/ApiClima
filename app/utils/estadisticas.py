@@ -1,7 +1,7 @@
 from fastapi import HTTPException
 from app.services.external_api import recuperarClimaActualCiudad
 
-ciudades = ["Bogotaaaxsaax", "Cali", "Medellin", "Cartagena", "Cucuta"]
+ciudades = ["Bogota", "Cali", "Medellin", "Cartagena", "Cucuta"]
 
 # Función que recibe un parametro y retorna el promedio de dicho parametro tomando 5 ciudades
 def calcularEstadisticasColombia(parametro: str):
