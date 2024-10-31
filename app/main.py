@@ -1,7 +1,7 @@
 from fastapi import FastAPI
+from app.api.endpoints import router
 
 app = FastAPI()
 
-@app.get('/api/')
-def home():
-    return "Hola mundo"
+# Registrar el router
+app.include_router(router)
