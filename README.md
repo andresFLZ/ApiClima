@@ -18,10 +18,16 @@ Esta api consume data de la api OpenWeatherMap y la trata para poder sacar ciert
 git clone https://github.com/andresFLZ/ApiClima.git
 ```
 
-2. Creación del entorno virtual en la carpeta donde clonaste el repositorio
+2. Creación del entorno virtual en la carpeta que se creo, seguramente se llama ApiClima
 
 ```bash
 python3 -m venv venv
+```
+
+Si este comando no funciona prueba con este:
+
+```bash
+py -m venv venv
 ```
 
 3. Activación del entorno virtual
@@ -285,12 +291,19 @@ ejecucion(leads)
 ### Procedimiento para ejecutar el script
 
 1. Crear archivo llamado leads.py
-2. Abrir terminal
+2. Copiar el código de arriba en el archivo
+3. Abrir terminal
    * Windows: Usa cmd o PowerShell.
    * Linux/macOS: Usa la aplicación Terminal.
-3. En la consola de la terminal bbicarse en la carpeta donde se encuentra el archivo
-4. Ejecutar el siguiente comando
+4. En la consola de la terminal ubicarse en la carpeta donde se encuentra el archivo
+5. Ejecutar el siguiente comando
 
 ```bash
-python3 script.py
+python3 leads.py
+```
+
+Si este comando no funciona prueba con este:
+
+```bash
+py leads.py
 ```
