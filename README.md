@@ -57,7 +57,9 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
-Esto inicia el servidor de desarrollo en http://127.0.0.1:8000
+Esto inicia el servidor de desarrollo en http://127.0.0.1:8000 y al abrirlo en el navegador debería mostrar algo parecido a lo siguiente
+
+![image](https://github.com/user-attachments/assets/e3ff1fc7-88ef-4d09-a921-b8d99e5ffd4b)
 
 ## Stack tecnológico
 
