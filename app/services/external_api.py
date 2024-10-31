@@ -1,12 +1,11 @@
 import requests
 from app.core.config import settings
 
-# Función que recupera el clima actual de una ciudad, recibe 2 parametros, la ciudad y el país de la ciudad.
+# Función que recupera el clima actual de una ciudad de la api OpenWeatherMap API
+# recibe 2 parametros: ciudad que es string, pais que es string.
 # Si no hay errores devuelve un JSON con la data pero si hay errores verfica de que error se trata y lo notifica
 def recuperarClimaActualCiudad(ciudad: str, pais: str):
-    url = f"{settings.API_CLIMA}weather?q={ciudad},{pais}&appid={settings.API_KEY}"
-    print("URL AQUIII")
-    print(url)
+    url = f"{settings.API_CLIMA}weather?q={ciudad},{pais}&units=metric&appid={settings.API_KEY}"
     
     try:
         response = requests.get(url)

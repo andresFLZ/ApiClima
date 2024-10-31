@@ -1,17 +1,26 @@
 from fastapi import APIRouter, HTTPException
 from app.services.external_api import recuperarClimaActualCiudad
+from app.utils.estadisticas import calcularEstadisticasColombia, verificarParametro
 
 router = APIRouter()
-
+# Este endpoint devuelve el clima actual de una ciudad específica en un país dado.
+# Se requiere proporcionar el nombre de la ciudad y el código ISO del país (de dos letras).
+# La respuesta incluye información sobre temperatura, presión, humedad y otros datos meteorológicos.
 @router.get("/clima/{ciudad}/{pais}")
 async def obtener_clima(ciudad: str, pais: str):
-    # Llamar a la función que consume la API externa
     data = recuperarClimaActualCiudad(ciudad, pais)
     
-    # Verificar si hay un error en los datos devueltos
     if "error" in data:
-        print("FAIL")
         raise HTTPException(status_code=data["code"], detail=data["error"])
     
-    # Si todo va bien, retornar los datos de la API externa
     return data
+
+
+# FALTA ESTA DOOOC
+# Este endpoint devuelve el clima actual de una ciudad específica en un país dado.
+# Se requiere proporcionar el nombre de la ciudad y el código ISO del país (de dos letras).
+# La respuesta incluye información sobre temperatura, presión, humedad y otros datos meteorológicos.
+@router.post("/clima/estadisticas/{parametro}")
+async def obtener_estadisticas(parametro: str):
+    datos = calcularEstadisticasColombia(parametro)
+    return {"promedio": datos}

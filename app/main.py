@@ -3,5 +3,5 @@ from app.api.endpoints import router
 
 app = FastAPI()
 
-# Registrar el router
+# Registra las routas (endpoints)
 app.include_router(router)
