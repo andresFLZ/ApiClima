@@ -2,6 +2,8 @@
 
 Trabajo desarrollado por Andrés Felipe Limas Zea
 
+## Descripción
+
 ## Requerimientos
 
 * Versión de python mayor a la 3.7
@@ -40,3 +42,18 @@ uvicorn app.main:app --reload
 ```
 
 Esto inicia el servidor de desarrollo en http://127.0.0.1:8000
+
+## Stack tecnológico
+
+Para desarrollar la api se uso fastAPI
+
+<img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/fastapi/fastapi-original.svg" title="FastAPI" alt="FastAPI" width="40" height="40"/>&nbsp;
+
+## Parte 1 - Manejo de APIs
+
+### Elección de api publica
+
+### Estructura del proyecto
+
+### Funcionamiento
