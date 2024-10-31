@@ -26,8 +26,16 @@ python3 -m venv venv
 
 3. Activación del entorno virtual
 
+* Windows:
+
 ```bash
 venv\Scripts\activate
+```
+
+* Linux/macOS:
+
+```bash
+source venv/bin/activate
 ```
 
 4. Instalación de dependencias
@@ -205,3 +213,84 @@ A continuación dejo el procedmiento que yo seguí para completar la primera par
 11. Implementación de las funciones reqeuridas para el funcionamiento del método
 12. Creación de endpoint post que consume las funciones
 
+## Parte 2 - Resolución de problemas
+
+Misión: Resolver un problema de lógica o manipulación de datos utilizando Python.
+
+Para ello se implemento el siguiente código:
+
+```markdown
+leads = [
+    {"id": 1, "name": "Ana Salcedo", "location": "Medellín", "budget": 200000000},
+    {"id": 2, "name": "Santiago Gallo", "location": "Medellín", "budget": 500000000},
+    {"id": 3, "name": "Carlota Habib", "location": "Medellín", "budget": 650000000},
+    {"id": 4, "name": "Pablo Sánchez", "location": "Bogotá", "budget": 350000000},
+    {"id": 5, "name": "Manuel Franco", "location": "Bogotá", "budget": 150000000},
+    {"id": 6, "name": "Lucía Cardozo", "location": "Cali", "budget": 300000000},
+    {"id": 7, "name": "Andrés Vélez", "location": "Barranquilla", "budget": 400000000},
+    {"id": 8, "name": "Valentina López", "location": "Medellín", "budget": 250000000},
+    {"id": 9, "name": "Jorge Díaz", "location": "Cali", "budget": 550000000},
+    {"id": 10, "name": "Marta Gómez", "location": "Barranquilla", "budget": 500000000},
+    {"id": 11, "name": "Ricardo Pérez", "location": "Bogotá", "budget": 450000000},
+    {"id": 12, "name": "Natalia Morales", "location": "Cali", "budget": 600000000},
+    {"id": 13, "name": "Felipe Castro", "location": "Medellín", "budget": 100000000},
+    {"id": 14, "name": "Laura Mejía", "location": "Barranquilla", "budget": 200000000},
+    {"id": 15, "name": "Carlos Rivera", "location": "Bogotá", "budget": 250000000},
+    {"id": 16, "name": "Andrea Ortiz", "location": "Cali", "budget": 700000000},
+    {"id": 17, "name": "Gustavo Torres", "location": "Medellín", "budget": 450000000},
+    {"id": 18, "name": "Isabel Rojas", "location": "Barranquilla", "budget": 350000000},
+    {"id": 19, "name": "Camilo Vargas", "location": "Medellín", "budget": 300000000},
+    {"id": 20, "name": "Diana Sánchez", "location": "Bogotá", "budget": 400000000},
+    {"id": 21, "name": "Julio Gómez", "location": "Cali", "budget": 800000000},
+    {"id": 22, "name": "Paola Arboleda", "location": "Medellín", "budget": 150000000},
+    {"id": 23, "name": "Javier Silva", "location": "Bogotá", "budget": 550000000},
+    {"id": 24, "name": "María Fernanda Ríos", "location": "Cali", "budget": 250000000},
+    {"id": 25, "name": "Raúl Martínez", "location": "Barranquilla", "budget": 100000000},
+]
+
+
+def filtrar_leads(leads):
+    """Filtra los leads que están en Medellín."""
+    return [lead for lead in leads if lead['location'] == 'Medellín']
+
+def calcular_presupuesto_total(leads_filtrados):
+    """Calcula el presupuesto total de los leads filtrados."""
+    return sum(lead['budget'] for lead in leads_filtrados)
+
+def ordenar_leads(leads_filtrados):
+    """Ordena los leads filtrados por presupuesto en orden descendente."""
+    return sorted(leads_filtrados, key=lambda lead: lead['budget'], reverse=True)
+
+def presentar_resultados(leads_filtrados, presupuesto_total, leads_ordenados):
+    """Imprime los resultados filtrados, calculados y ordenados."""
+    print("Leads filtrados en Medellín:")
+    for lead in leads_filtrados:
+        print(f"ID: {lead['id']}, Nombre: {lead['name']}, Presupuesto: {lead['budget']}")
+
+    print(f"\nPresupuesto total de los leads filtrados: {presupuesto_total}")
+
+    print("\nLeads ordenados de Medellín:")
+    for lead in leads_ordenados:
+        print(f"ID: {lead['id']}, Nombre: {lead['name']}, Presupuesto: {lead['budget']}")
+
+def ejecucion(leads):
+    leads_medellin = filtrar_leads(leads)
+    presupuesto_total = calcular_presupuesto_total(leads_medellin)
+    leads_ordenados = ordenar_leads(leads_medellin)
+    presentar_resultados(leads_medellin, presupuesto_total, leads_ordenados)
+
+ejecucion(leads)
+```
+
+### Procedimiento para ejecutar el script
+
+1. Crear archivo llamado leads.py
+2. Abrir terminal
+   * Windows: Usa cmd o PowerShell.
+   * Linux/macOS: Usa la aplicación Terminal.
+3. En la consola de la terminal bbicarse en la carpeta donde se encuentra el archivo
+4. Ejecutar el siguiente comando
+
+```bash
+python3 script.py
+```
